@@ -23,7 +23,7 @@ const Tabs = (topics) => {
   topics.forEach(topic => {
     let tab = document.createElement('div');
     tab.classList.add('tab')
-      tab.topicText = topic
+      tab.textContent = topic
       topicText.appendChild(tab)
   });
   

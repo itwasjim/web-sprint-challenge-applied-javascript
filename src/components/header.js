@@ -49,7 +49,7 @@ const Header = (title, date, temp) => {
 const headerAppender = (selector) => {
 
   const root =  document.querySelector(selector)
-  root.appendChild(Header('Test', "9/7/2023", '60 degrees'))
+  root.appendChild(Header('Bloomtech Times', "9/7/2023", '60 degrees'))
 }
 
 export { Header, headerAppender }
