@@ -1,4 +1,5 @@
 const Header = (title, date, temp) => {
+
   // TASK 1
   // ---------------------
   // Implement this function taking `title`, `date` and `temp` as its 3 args and returning the markup below.
@@ -11,9 +12,27 @@ const Header = (title, date, temp) => {
   //    <span class="temp">{ temp }</span>
   //  </div>
   //
+
+  const heading = document.createElement('div');
+  const dateText = document.createElement('span');
+  const titleText = document.createElement('h1');
+  const tempText = document.createElement('span');
+  
+  heading.classList.add('header');
+  dateText.classList.add('date');
+  tempText.classList.add('temp');
+
+  dateText.textContent = date;
+  titleText.textContent = title;
+  tempText.textContent = temp;
+
+  heading.appendChild(dateText);
+  heading.appendChild(titleText);
+  heading.appendChild(tempText);
+
+  return heading;
 }
 
-const headerAppender = (selector) => {
   // TASK 2
   // ---------------------
   // Implement this function taking a css selector as its only argument.
@@ -26,6 +45,11 @@ const headerAppender = (selector) => {
   // We are taking care of passing in the correct selector on line 16,
   // so all that you need to do is pass it into the querySelector method
   // for the tests to work!
+
+const headerAppender = (selector) => {
+
+  const root =  document.querySelector(selector)
+  root.appendChild(Header('Test', "9/7/2023", '60 degrees'))
 }
 
 export { Header, headerAppender }
